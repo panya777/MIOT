@@ -1,0 +1,23 @@
+Arduino with LM35(Temp Sensor)
+const int sensor=A0;
+float vin;
+float tempc;
+void setup()
+{
+  pinMode(sensor, INPUT);
+  Serial.begin(9600);
+  delay(500);
+}
+void loop(){
+ vin=analogRead(sensor);
+  Serial.print("Digital value= ");
+  Serial.print(vin);
+  Serial.print("\n");
+  tempc=(vin*500)/1023;
+  Serial.print("in Degree C = ");
+  Serial.print(tempc);
+  delay(1000);
+  Serial.print("\n");      
+}
+
+
